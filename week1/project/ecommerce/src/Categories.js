@@ -1,13 +1,10 @@
 import "./Categories.css";
-import React from "react";
+import React, { useState } from "react";
 import dataCategories from "./fake-data/all-categories";
 
-function Categories({
-  activeIndex,
-  setActiveIndex,
-  filteringData,
-  getAllData,
-}) {
+function Categories({ filteringData, getAllData }) {
+  const [activeIndex, setActiveIndex] = useState("");
+
   return (
     <div className="categories">
       {dataCategories.map((category, index) => {

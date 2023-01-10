@@ -6,7 +6,6 @@ import dataProducts from "./fake-data/all-products";
 
 function App() {
   const [filteredProducts, setFilteredProducts] = useState(dataProducts);
-  const [activeIndex, setActiveIndex] = useState("");
 
   //Filtering Products Data
   const filteringData = (category) => {
@@ -24,12 +23,7 @@ function App() {
   return (
     <div className="App">
       <h1>Products</h1>
-      <Categories
-        activeIndex={activeIndex}
-        setActiveIndex={setActiveIndex}
-        filteringData={filteringData}
-        getAllData={getAllData}
-      />
+      <Categories filteringData={filteringData} getAllData={getAllData} />
       <Products filteredProducts={filteredProducts} />
     </div>
   );
