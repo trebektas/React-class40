@@ -1,0 +1,23 @@
+.title-container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.title-container--title {
+    margin-right: auto;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+.nav {
+    margin-left: 8px;
+}
+
+.nav-link {
+    margin-left: 4px;
+    margin-right: 4px;
+}
