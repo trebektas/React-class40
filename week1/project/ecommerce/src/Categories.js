@@ -2,7 +2,7 @@ import "./Categories.css";
 import React, { useState } from "react";
 import dataCategories from "./fake-data/all-categories";
 
-function Categories({ filteringData, getAllData }) {
+function Categories({ onSelectCategory }) {
   const [activeIndex, setActiveIndex] = useState("");
 
   return (
@@ -20,12 +20,12 @@ function Categories({ filteringData, getAllData }) {
               if (activeIndex === index) {
                 //Reset active index
                 setActiveIndex();
-                //Get all products data to filteredProducts in App.js
-                getAllData();
+                //Reset selected category
+                onSelectCategory();
               } else {
                 setActiveIndex(index);
-                //Set filtered products
-                filteringData(e.currentTarget.innerText);
+                //Set selected category
+                onSelectCategory(e.currentTarget.innerText);
               }
             }}
           >

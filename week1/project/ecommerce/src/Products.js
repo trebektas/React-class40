@@ -4,9 +4,9 @@ import React from "react";
 function Products({ filteredProducts }) {
   return (
     <ul className="products">
-      {filteredProducts.map((product, index) => {
+      {filteredProducts.map((product) => {
         return (
-          <li key={index} className="products--item">
+          <li key={product.id} className="products--item">
             <div className="product">
               <img
                 className="product--image"

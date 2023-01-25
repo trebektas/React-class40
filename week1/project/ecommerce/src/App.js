@@ -5,25 +5,18 @@ import Products from "./Products";
 import dataProducts from "./fake-data/all-products";
 
 function App() {
-  const [filteredProducts, setFilteredProducts] = useState(dataProducts);
+  const [selectedCategory, setSelectedCategory] = useState();
 
-  //Filtering Products Data
-  const filteringData = (category) => {
-    let productsByCategory = dataProducts.filter(
-      (product) => `FAKE: ${product.category}` === category
-    );
-    setFilteredProducts(productsByCategory);
-  };
-
-  //Get All Products Data to filteredProducts
-  const getAllData = () => {
-    setFilteredProducts(dataProducts);
-  };
+  const filteredProducts = selectedCategory
+    ? dataProducts.filter(
+        (product) => `FAKE: ${product.category}` === selectedCategory
+      )
+    : dataProducts;
 
   return (
     <div className="App">
       <h1>Products</h1>
-      <Categories filteringData={filteringData} getAllData={getAllData} />
+      <Categories onSelectCategory={setSelectedCategory} />
       <Products filteredProducts={filteredProducts} />
     </div>
   );
